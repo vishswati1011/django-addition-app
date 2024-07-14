@@ -5,12 +5,14 @@
 </head>
 <body>
     
-    <form action="guest/add" method="GET">
-        <input type="text" name="num1" placeholder="Enter first number">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="num1" placeholder="Enter first number" value="{{key1}}">
         <br/>
-        <input type="text" name="num2" placeholder="Enter second number">
+        <input type="text" name="num2" placeholder="Enter second number" value="{{key2}}">
         <br/>
         <input type="submit" value="Add" name="btn_submit">
     </form>
+    {{key}}
 </body>
 </html>

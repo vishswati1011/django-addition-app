@@ -122,6 +122,60 @@ def addition(request):
     return HttpResponse('The sum is:'+str(c))
 
 
+## step 18: create single method for request page and post 
+
+### changes in addition.html
+
+removed action from form
+add value=key1 key2
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Addition</title>
+</head>
+<body>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="num1" placeholder="Enter first number" value="{{key1}}">
+        <br/>
+        <input type="text" name="num2" placeholder="Enter second number" value="{{key2}}">
+        <br/>
+        <input type="submit" value="Add" name="btn_submit">
+    </form>
+    {{key}}
+</body>
+</html>
+
+## changes in urls.py 
+removed add path from urls
+
+syntax:
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+  ] 
+
+## changes in views.py
+removed addition request from views.py
+syntax:
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    if request.method=="POST":
+        a=int(request.POST["num1"])
+        b=int(request.POST["num2"])
+        c=a+b
+        return render(request,"guestapp/addition.html",{'key1':a,'key2':b,'key': 'addition is'+str(c)})    
+    else:    
+        return render(request, 'guestapp/addition.html')
+
 
 
 
