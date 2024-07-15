@@ -200,6 +200,71 @@ INSTALLED_APPS = [
 
 ## add external css file
 
+### create database in django application
+
+## Step 1 : 
+### create models write the code in helloapp/models.py
+
+
+from django.db import models
+
+# Create your models here.
+
+class Register(models.Model):
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    mobile = models.CharField(max_length=100)
+    fullname = models.CharField(max_length = 100)
+    address = models.CharField(max_length =100)
+
+## Step 2 :
+
+## now run the command to migrate models and create table
+
+1. python3 manage.py migrate
+
+2. python3 manage.py makemigrations helloapp
+
+3. python3 manage.py sqlmigrate helloapp 0001_initial
+
+create the admin password and username
+4. python3 manage.py createsuperuser
+
+run the project again
+5. python3 manage.py runserver
+
+localhost:8000/admin
+login with username and password
+but register model not visible now add register models in admin.py
+
+6. admin.py
+
+from django.contrib import admin
+
+# Register your models here.
+
+from .models import Register
+admin.site.register(Register)
+
+7. to show record in models in detail add self method
+
+from django.db import models
+
+# Create your models here.
+
+class Register(models.Model):
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    mobile = models.CharField(max_length=100)
+    fullname = models.CharField(max_length = 100)
+    address = models.CharField(max_length =100)
+    def __str__(self):
+        return self.email+ " " + self.password + " " + self.mobile + " " + self.fullname + " " + self.address     
+
+
+
+
+
 
 
 
