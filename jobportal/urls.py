@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-    path('guest', include('guestapp.urls')),
+    path('hello/',include('helloapp.urls')),
+    path('guest/', include('guestapp.urls')),
     path('admin/', admin.site.urls),
 ]

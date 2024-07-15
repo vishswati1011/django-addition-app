@@ -177,6 +177,29 @@ def index(request):
         return render(request, 'guestapp/addition.html')
 
 
+### create new hello app
+
+1. $ python3 manage.py startapp helloapp
+2. add helloapp in project jobportal file setting.py
+example
+INSTALLED_APPS = [
+    'helloapp',
+    'guestapp',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+3. create templates/helloapp folder in helloapp
+4. create index.html,about.html,contact.html file 
+5. add urls.py file and write code to add path
+6. update views.py file 
+
+
+
+
 
 
 
