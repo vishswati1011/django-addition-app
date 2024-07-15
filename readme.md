@@ -195,7 +195,10 @@ INSTALLED_APPS = [
 3. create templates/helloapp folder in helloapp
 4. create index.html,about.html,contact.html file 
 5. add urls.py file and write code to add path
-6. update views.py file 
+6. update views.py file to render all html file on added paths
+
+
+## add external css file
 
 
 

@@ -1,0 +1,21 @@
+.header_div {
+    display: flex;
+    flex-direction: row;
+    box-shadow: gray 0px 0px 10px;
+    margin:0px;
+    padding: 5px;
+    align-items: center;
+}
+.nav_div{
+    margin-left: auto;
+}
+.about_list_style{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+.about_nav_list a{
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+}
